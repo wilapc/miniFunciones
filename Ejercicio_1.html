@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    var texto = prompt("Por favor introduzca el texto");
+    var num = prompt("Por favor ingrese un numero");
+    var div = prompt("Ingrese el numero a dividir y repetir")
+
+    const f = (t, p, d) => {
+      //Convierte la entrada en cadena de texto
+      let texto1 = new String(t);
+      let numero = parseInt(p);
+      let dividir = parseInt(d);
+      //Cuenta la cantidad de caracteres de la cadena de texto
+      console.log("Esta es la longitud del texto " + texto1.length)
+      //Recorta la cadenda de caracteres
+      console.log(texto1.slice(0, numero));
+      //Dividir palabras
+      console.log(texto1.split(" ", div));
+      //Repetir texto
+      console.log(texto1.repeat(dividir))
+    }
+
+    f(texto, num, div)
+    //textoEntrada(texto, num);
+
+  </script>
+</head>
+
+<body>
+  <h1>Primeros ejercicios</h1>
+</body>
+
+</html>

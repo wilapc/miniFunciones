@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ejercicios</title>
+  <script>
+
+    //5) Programa una función que invierta las palabras de una cadena de texto, 
+    //pe.miFuncion("Hola Mundo") devolverá "odnuM aloH".
+
+    const invertir = (text = "") => {
+      if (!text) return console.warn('Debe ingresar un texto');
+
+      let texto = text;
+      let arr = [];
+
+      for (let i = 0; i < text.length; i++) {
+        let letra = text.slice(i, i + 1);
+        arr.push(letra);
+      }
+
+      arr = arr.reverse();
+      arr = arr.toString();
+
+      for (let i = 0; i < arr.length; i++) arr = arr.replace(",", "");
+
+      console.log(arr);
+    }
+
+    invertir("Hola Mundo");
+    invertir('La programacion es hermosa');
+
+    console.clear();
+
+
+    //6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, 
+    //pe.miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+
+    const palabrasRepetidas = (text = "", b = "") => {
+
+      if (!text) return console.warn('Debe ingresar una palabra');
+
+      if (!b) return console.warn('Debe ingregar la frase a buscar');
+
+      let busqueda = b.toString(), texto = text.toString();
+
+      let regex = RegExp(busqueda, 'g');
+
+      let buscar = texto.match(regex);
+
+      if (buscar === null) return console.info('No hubo coincidencias');
+
+      console.log('Numero de coincidencias ' + buscar.length + ' de ' + busqueda)
+
+    }
+
+    palabrasRepetidas("hola mundo adios mundo", "mundo");
+    palabrasRepetidas(252525, 25);
+    palabrasRepetidas(25262252622, 2526);
+
+    console.clear();
+
+    //7) Programa una función que valide si una palabra o frase dada, es un palíndromo
+    //(que se lee igual en un sentido que en otro), pe.mifuncion("Salas") devolverá true.
+
+    const palindromo = (text = "") => {
+      if (!text) return console.warn('Debe ingresar un texto');
+
+      let texto = text;
+      let arr = [];
+
+      for (let i = 0; i < text.length; i++) {
+        let letra = text.slice(i, i + 1);
+        arr.push(letra);
+      }
+
+      arr = arr.reverse();
+      arr = arr.toString();
+
+      for (let i = 0; i < arr.length; i++) arr = arr.replace(",", "");
+
+      arr = arr.toLowerCase(), texto = texto.toLowerCase();
+
+      if (arr === texto) return console.log(true);
+
+      console.log(arr, texto, false);
+    }
+
+    palindromo('Salas');
+    palindromo('Ana');
+    palindromo('palindromo');
+
+    console.clear();
+
+    //8) Programa una función que elimine cierto patrón de caracteres de un texto dado, 
+    //pe.miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+
+    const eliminarValor = (t = "", v = "") => {
+      if (!t) return console.warn('Debe ingresar un texto');
+
+      if (!v) return console.warn('No coloco el texto a eliminar');
+
+      let texto = t.replaceAll(v, "");
+
+      console.log(texto);
+    }
+
+    eliminarValor("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
+    eliminarValor("xyz1, xyz2, xyz3, xyz4 y xyz5");
+    eliminarValor("Pedrito tuvo un tigre en un trigal", "t")
+
+  </script>
+</head>
+
+<body>
+
+  <h1>Ejercicio 2</h1>
+
+</body>
+
+</html>
